@@ -1,6 +1,6 @@
-# NextWork web sample: architecture and maintenance
+# Java JSP Web Application: architecture and maintenance
 
-Reviewed 11 November 2026 against master `a536ae778a87a6c1ca0cf8ff4ffe29def8a28d1a`. This is a small guided Java web learning sample, maintained with AI assistance. The repository contains one JSP, a web descriptor and Maven/CodeBuild configuration. It does not contain an API, database, authentication layer or provisioned AWS infrastructure.
+Original architecture review: 11 November 2026 against master `a536ae778a87a6c1ca0cf8ff4ffe29def8a28d1a`. Naming and presentation updated 15 November 2026 from `8bf3b5f89ef462f813b3a3c60aee4fc80b52422e`. This is a small guided Java web learning sample, maintained with AI assistance. The repository contains one JSP, a web descriptor and Maven/CodeBuild configuration. It does not contain an API, database, authentication layer or provisioned AWS infrastructure. The [provenance record](PROVENANCE.md) preserves its NextWork learning origin.
 
 ## Build and runtime boundaries
 
@@ -8,7 +8,7 @@ Reviewed 11 November 2026 against master `a536ae778a87a6c1ca0cf8ff4ffe29def8a28d
 flowchart TD
   Source["index.jsp and web.xml"] --> Maven["Maven verify"]
   Config["pom.xml pinned build plugins"] --> Maven
-  Maven --> WAR["target/nextwork-web-project.war"]
+  Maven --> WAR["target/java-jsp-web-application.war"]
   WAR --> Container["Separately configured servlet container"]
   Container --> Browser["Browser response"]
   Buildspec["CodeBuild buildspec.yml"] --> Maven
@@ -32,7 +32,7 @@ flowchart TD
   Review --> Runtime["Separate container smoke test"]
 ```
 
-With JDK 17+ and Maven 3.9.x installed, run `mvn --batch-mode --no-transfer-progress clean verify`. Check `jar tf target/nextwork-web-project.war` contains `index.jsp` and `WEB-INF/web.xml`. The GitHub workflow builds on JDK 17 and checks both entries without deploying. There are no application unit tests; artifact validation is not a functional servlet test.
+With JDK 17+ and Maven 3.9.x installed, run `mvn --batch-mode --no-transfer-progress clean verify`. Check `jar tf target/java-jsp-web-application.war` contains `index.jsp` and `WEB-INF/web.xml`. The GitHub workflow builds on JDK 17 and checks both entries without deploying. There are no application unit tests; artifact validation is not a functional servlet test.
 
 For a release, additionally start the selected container locally, request the page, check status/content type and review logs. Keep container version and runtime configuration documented when that runtime is added. Remove any credential helper that writes plaintext passwords; the historical JSP messages are not an instruction to store secrets.
 

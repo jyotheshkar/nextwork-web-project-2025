@@ -11,5 +11,5 @@ phases:
       - mvn --batch-mode --no-transfer-progress clean verify
 artifacts:
   files:
-    - target/nextwork-web-project.war
+    - target/java-jsp-web-application.war
   discard-paths: no
