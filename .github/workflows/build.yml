@@ -1,4 +1,4 @@
-name: Build learning WAR
+name: Build Java JSP WAR
 on:
   push:
   pull_request:
@@ -21,6 +21,6 @@ jobs:
       - run: mvn --batch-mode --no-transfer-progress clean verify
       - name: Check archive contains the page and descriptor
         run: |
-          jar tf target/nextwork-web-project.war > /tmp/war-contents.txt
+          jar tf target/java-jsp-web-application.war > /tmp/war-contents.txt
           grep -Fx 'index.jsp' /tmp/war-contents.txt
           grep -Fx 'WEB-INF/web.xml' /tmp/war-contents.txt

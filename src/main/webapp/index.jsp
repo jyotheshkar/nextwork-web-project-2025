@@ -1,10 +1,21 @@
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java JSP Web Application</title>
+</head>
 <body>
-<h2>Hello Jyothesh Karnam</h2>
-<p> this is my nextwork application and its working!!</p>
-<h1> hey i am editing this h1 tag from terminal, hope it works! </h1>
-<p>If you see this line in Github, that means your latest changes are getting pushed to your cloud repo :o</p>
-<h2> hey this is testing 13th march to check if github is still connected to EC2</h2>
-<h1> Hey so this is a final test to check if the git credential helper store really works or not</h1>
+  <main>
+    <h1>Java JSP Web Application</h1>
+    <p>A guided Java web project by Jyothesh Karnam.</p>
+    <h2>What this sample demonstrates</h2>
+    <ul>
+      <li>A JSP page and servlet application descriptor.</li>
+      <li>Maven packaging into a deployable WAR archive.</li>
+      <li>Source control and automated build validation.</li>
+    </ul>
+    <p>This page is a learning sample. It does not expose an API, database or authentication service.</p>
+  </main>
 </body>
 </html>
